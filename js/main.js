@@ -70,17 +70,16 @@ Date Object
 - Declare a variable 'todayIs'.
 - Using the date constructor, it should print today's date.
 **************************************************************************************/
-/*
-(function(testerOne){
+
+(function(){
   "use strict";
   //YOUR CODE HERE
  let todayIs = new Date("June 6, 2017");
   let today = todayIs ;
   console.log(todayIs);
-  
-// console.assert(todayIs == today, "#3 Test failed. Did you set the date correctly?");
-})(testerOne);
-*/
+  console.assert(todayIs == today, "#3 Test failed. Did you set the date correctly?");
+})();
+
 /**************************************************************************************
 # 4
 Warm up
@@ -132,14 +131,15 @@ Date object
 - Declare a variable: 'stringDate'.
 - Set the value of 'stringDate' to be a string of today's date.
 **************************************************************************************/
-/*
-(function(testerTwo){
+var testerTwo;
+(function(){
   "use strict";
   var stringDate = new Date( "June 12, 2018" );
-  console.log("#6 stringDate", stringDate)
+  testerTwo = stringDate;
+  console.log("#6 stringDate", stringDate);
   console.assert(stringDate == testerTwo, "#6 Test Failed. Did you set stringDate correctly?")
-})(testerTwo);
-*/
+})();
+
 
 /**************************************************************************************
 # 7
@@ -200,8 +200,8 @@ HINTS:
 (function() {
   "use strict";
 
-  var goodStanding = false;
-  var monthsActive = 2;
+  var goodStanding = true;
+  var monthsActive = 18;
 
   //Do not modify 'name' globaly.
   var name = null;
@@ -249,7 +249,8 @@ benefit['discount'] = "5";
         return "Thank you for your loyalty. You've been a member for " + monthsActive + " " + "months . You next bill will reflect a $" + benefit.credit + " credit and a " + benefit.discount + "% discount going forward.";
       }
     }
-    return greeting().concat(accountStat());
+    var result =  greeting() + " " + accountStat();
+    return result;
     //Here 'accountCheck' should return both the 'greeting' output and the 'accountStat' output.
   }
 
